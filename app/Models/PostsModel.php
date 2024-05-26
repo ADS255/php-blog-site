@@ -13,9 +13,13 @@ class PostsModel extends Model
 
     public function getRecentPosts()
     {
-        $builder = $this->builder();
         return $this->orderBy('id')
                     ->limit(3)
                     ->findAll();
+    }
+
+    public function getPost(int $id)
+    {
+        return $this->find($id);
     }
 }
