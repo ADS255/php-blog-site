@@ -1,8 +1,10 @@
 <!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title><?= esc($tabTitle)?></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= esc($tabTitle) ?></title>
 </head>
 <body>
-
     <h1><?= esc($title) ?></h1>
