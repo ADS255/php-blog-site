@@ -38,4 +38,9 @@ class PostsModel extends Model
         // Inserts data and returns inserted row's primary key
         $this->insert($data);
     }
+
+    public function deletePost($id)
+    {
+        $this->delete($id);
+    }
 }

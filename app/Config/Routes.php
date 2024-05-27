@@ -14,6 +14,7 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('createpost', 'Admin::createPost');
 
     $routes->post('storepost', 'Admin::storePost');
+    $routes->post('deletepost/(:num)', 'Admin::deletePost/$1');
 });
 
 $routes->get('/login', 'Auth::index');

@@ -41,4 +41,11 @@ class Admin extends BaseController
 
         return redirect()->to(base_url('/admin/createpost'));
     }
+
+    public function deletePost($id)
+    {
+        $postsModel = new PostsModel();
+        $postsModel -> deletePost($id);
+        return redirect()->to(base_url('/admin'));
+    }
 }
