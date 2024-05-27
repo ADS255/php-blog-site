@@ -14,6 +14,7 @@ class Home extends BaseController
 
         return
         view('Templates/header',array('title' => 'Home'))
+        .view('nav')
         .view('home',$postsData)
         .view('Templates/footer');
     }

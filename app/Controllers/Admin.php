@@ -8,6 +8,7 @@ class Admin extends BaseController
 {
     public function __construct() 
     {
+        helper(['url']);
     }
 
     public function index(): string
@@ -16,7 +17,7 @@ class Admin extends BaseController
         $posts = $postsModel-> getAllPosts();
 
         return
-        view('Templates/header', ['title' => 'Admin'])
+        view('Templates/header', array('title' => 'Admin'))
         .view('adminNav')
         .view('managePosts', ['posts' => $posts])
         .view('Templates/footer');

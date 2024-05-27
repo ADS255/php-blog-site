@@ -14,6 +14,7 @@ class BlogPost extends BaseController
 
         return
         view('Templates/header',array('title' => $postData['post_title']))
+        .view('nav')
         .view('blogPost',$postData)
         .view('Templates/footer');
     }

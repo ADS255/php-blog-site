@@ -19,7 +19,10 @@ class Auth extends BaseController
     public function index(): string
     {
         // Display the login form
-        return view('login');
+        return 
+        view('Templates/header', array('title' => 'Admin'))
+        .view('login')
+        .view('Templates/footer');
     }
 
     public function login(): \CodeIgniter\HTTP\RedirectResponse
