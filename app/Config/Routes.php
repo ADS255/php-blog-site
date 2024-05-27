@@ -9,8 +9,13 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/blogpost/(:num)', 'BlogPost::index/$1');
 
-$routes->get('/admin', 'Admin::index', ['filter' => 'auth']);
+$routes->group('admin', ['filter' => 'auth'], function($routes) {
+    $routes->get('/', 'Admin::index');
+    $routes->get('createpost', 'Admin::createPost');
+
+    $routes->post('storepost', 'Admin::storePost');
+});
 
 $routes->get('/login', 'Auth::index');
+$routes->post('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');
-$routes->post('/login', 'Auth::login'); // Handle the form submission
